@@ -104,3 +104,8 @@ Run Tailwind dan Server
 
 npm run dev
 php artisan serve
+
+
+user login
+Email: Admin@gmail.com
+Password : admin123
