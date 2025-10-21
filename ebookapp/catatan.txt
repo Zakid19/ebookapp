@@ -1,0 +1,106 @@
+Laravel Ebook Viewer App
+
+Aplikasi Ebook Management System berbasis Laravel 11 + TailwindCSS + Breeze + PDF.js
+Didesain untuk mengelola, menampilkan, dan melindungi file PDF agar tidak bisa di-download atau dicopy.
+
+
+🚀 Fitur Utama
+
+✅ User Authentication
+
+Login & Register by Laravel Breeze
+
+Session-based authentication
+
+✅ Dashboard
+
+Tabel list semua Ebook dari database
+
+Kolom: No | Judul Ebook | Action (Lihat / Delete)
+
+Upload form di atas tabel
+
+✅ Upload Ebook
+
+File PDF disimpan ke storage/app/ebooks
+
+Validasi: hanya PDF, max 10MB
+
+Disimpan di DB: title, file_path
+
+✅ Inline PDF Viewer (Protected)
+
+Klik “Lihat” menampilkan PDF inline (di halaman yang sama)
+
+PDF dirender pakai PDF.js ke Canvas → tidak bisa dicopy/download
+
+URL PDF diamankan dengan Signed URL (Laravel)
+
+Tidak bisa diakses tanpa login
+
+✅ Delete Ebook
+
+Tombol “Delete” menghapus file dan data dari database
+
+✅ Security Features
+
+Signed route: mencegah akses langsung ke file PDF
+
+Header no-cache & nosniff
+
+PDF tidak dapat di-download, copy, atau disave
+
+Alert jika user meninggalkan tab browser
+
+🧱 Tech Stack
+
+Laravel 11
+
+Laravel Breeze (Auth)
+
+TailwindCSS (UI)
+
+PDF.js (Render PDF tanpa download)
+
+Vite (Asset bundler)
+
+
+
+⚙️ Instalasi & Setup
+
+Clone Repository
+
+git clone https://github.com/username/ebookapp.git
+cd ebookapp
+
+
+Install Dependencies
+
+composer install
+npm install
+
+
+Copy & Konfigurasi .env
+
+cp .env.example .env
+php artisan key:generate
+
+
+Setup Database
+
+Edit .env sesuai database lokal kamu (MySQL, Laragon, dll):
+
+DB_DATABASE=ebookapp
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+Lalu jalankan:
+
+php artisan migrate
+
+
+Run Tailwind dan Server
+
+npm run dev
+php artisan serve
